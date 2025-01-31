@@ -1,0 +1,41 @@
+/* Definir fonte global */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #FF8310;
+  --background-color: #191A20;
+  --card-color: #232323;
+  --text-color: #FFFFFF;
+  --text-secondary-color: #CCCCCC;
+  --border-radius: 8px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Botão padrão */
+.button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #e6750a;
+}
+
+/* Botão de carrinho */
+.button.added {
+  background: #393939;
+}
