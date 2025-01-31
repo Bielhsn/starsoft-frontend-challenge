@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-// Definição da estrutura de um item no carrinho
+// Estrutura de um item no carrinho
 interface CartItem {
   id: string
   name: string
@@ -8,7 +8,6 @@ interface CartItem {
   image: string
 }
 
-// Estado inicial do carrinho
 interface CartState {
   items: CartItem[]
 }

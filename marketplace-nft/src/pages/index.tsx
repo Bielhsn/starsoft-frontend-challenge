@@ -9,7 +9,7 @@ const fetchNFTs = async () => {
   try {
     const response = await axios.get('https://starsoft-challenge-7dfd4a56a575.herokuapp.com/v1/products?page=1&limit=20');
     console.log('Resposta da API:', response.data); // Verifica o formato
-    return response.data.data; // Retorna corretamente o array de NFTs
+    return response.data.data; // Retorna o array de NFTs
   } catch (error) {
     console.error('Erro ao buscar NFTs:', error);
     return []; // Retorna array vazio para evitar erro no .map()

@@ -5,7 +5,7 @@ import { store } from '@/redux/store'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import '@/styles/globals.css'
 
-// Criando uma instância do QueryClient
+// IInstância do QueryClient
 const queryClient = new QueryClient()
 
 export default function MyApp({ Component, pageProps }: AppProps) {
