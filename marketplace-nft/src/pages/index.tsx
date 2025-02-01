@@ -3,8 +3,10 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import NFTCard from '../components/NFTCard';
 import { NFT } from "./nfts/[id]";
+import dynamic from "next/dynamic";
+
+const NFTCard = dynamic(() => import("@/components/NFTCard"), { ssr: false });
 
 const fetchNFTs = async () => {
   try {
