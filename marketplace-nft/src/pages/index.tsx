@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next';
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import NFTCard from '../components/NFTCard';
+import { NFT } from "./nfts/[id]";
 
 const fetchNFTs = async () => {
   try {
@@ -28,7 +29,7 @@ const HomePage = () => {
   return (
     <div className="nft-grid">
       {nfts.length > 0 ? (
-        nfts.map((nft) => <NFTCard key={nft.id} nft={nft} />)
+        nfts.map((nft: NFT) => <NFTCard key={nft.id} nft={nft} />)
       ) : (
         <p>Nenhum NFT encontrado.</p>
       )}

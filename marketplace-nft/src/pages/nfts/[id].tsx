@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../../styles/NFTDetails.module.css";
 
-interface NFT {
+export interface NFT {
     id: string;
     name: string;
     description: string;
