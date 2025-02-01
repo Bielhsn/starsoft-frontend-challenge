@@ -1,0 +1,158 @@
+/* Ajuste de cores para fundo da página e cards */
+
+.container {
+  padding: 20px;
+  text-align: center;
+  background-color: #232323;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #191A20; 
+  border-radius: 8px;
+  padding: 30px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.cardText {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.imageContainer {
+  background-color: #22232C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Adiciona um espaçamento interno */
+  border-radius: 8px;
+}
+
+.nftImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: left;
+  width: 100%;
+}
+
+.description {
+  font-size: 14px;
+  color: #cccccc;
+  margin: 10px 0;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 2px;
+  margin-bottom: 15px;
+}
+
+.ethIcon {
+  width: 25px;
+  height: 25px;
+  padding-right: 10px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.buyButton {
+  background-color: #ff8310;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 300px;
+  height: 65px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.buyButton:hover {
+  background-color: #FF8310;
+}
+
+.progressBarContainer {
+  width: 16%;
+  height: 6px;
+  background-color: #393939;
+  border-radius: 8px;
+  margin: 10px auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 60px;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #FF8310;
+  transition: width 0.3s ease-in-out;
+}
+
+.loadMore {
+  width: 300px;
+  margin-top: 20px;
+  height: 70px;
+  background-color: #393939;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.loadMore:hover {
+  background-color: #393939;
+}
+
+.loadMore:disabled {
+  background-color: #393939;
+  cursor: not-allowed;
+}
