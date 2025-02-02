@@ -1,40 +1,50 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #232323;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 200px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 140px;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FEE193;
+  display: inline-block;
+  text-transform: lowercase;
+  position: relative;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  transform: perspective(200px) rotateX(15deg);
+  text-decoration: none;
+}
+
   
-  .logo {
-    display: flex;
-    align-items: center;
-    color: #FEE193;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  
-  .cart {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-  }
+.cart {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 20px;
+}
 
   .cartIcon {
-    margin-right: 25px;
+    margin-right: 35px;
+    color: #FF8310;
   }
   
   .cartCount {
     color: #fff;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
-    padding: 4px 8px;
     border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    right: -10px;
-    margin-right: 15px;
+    top: 20px;
+    right: 30px;
   }
   

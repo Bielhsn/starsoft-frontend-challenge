@@ -18,6 +18,8 @@ const Home = () => {
   const [nfts, setNfts] = useState<NFT[]>([]);
   const [visibleCount, setVisibleCount] = useState(8); // Começa com 8 NFTs visíveis
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState<NFT[]>([]);
+  const [cartCount, setCartCount] = useState(0); // Novo estado para o contador da sacola
 
   useEffect(() => {
     const fetchNFTs = async () => {
@@ -35,20 +37,33 @@ const Home = () => {
     fetchNFTs();
   }, []);
 
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+    setCart(storedCart);
+    setCartCount(storedCart.length);
+  }, []);
+
   const loadMoreNFTs = () => {
     if (visibleCount < nfts.length) {
       setVisibleCount((prevCount) => prevCount + 4);
     }
   };
 
-  // Cálculo da porcentagem de progresso da barra a cima do botão "Carregar mais"
+  const addToCart = (nft: NFT) => {
+    const updatedCart = [...cart, nft];
+    setCart(updatedCart);
+    setCartCount(updatedCart.length);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
   const progress = (visibleCount / nfts.length) * 100;
 
   if (loading) return <p>Carregando...</p>;
 
   return (
     <div>
-      <Navbar />
+      <Navbar cartCount={cart.length} />
+
       <div className={styles.container}>
         <div className={styles.grid}>
           {nfts.slice(0, visibleCount).map((nft) => (
@@ -72,7 +87,9 @@ const Home = () => {
                   />
                   <strong className={styles.price}>{nft.price} ETH</strong>
                 </div>
-                <button className={styles.buyButton}>COMPRAR</button>
+                <button className={styles.buyButton} onClick={() => addToCart(nft)}>
+                  COMPRAR
+                </button>
               </div>
             </div>
           ))}
@@ -93,7 +110,6 @@ const Home = () => {
         )}
       </div>
     </div>
-
   );
 };
 

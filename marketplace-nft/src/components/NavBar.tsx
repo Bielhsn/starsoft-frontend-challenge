@@ -1,16 +1,21 @@
+import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import styles from "../styles/Navbar.module.css";
 
-const Navbar = () => {
+interface NavbarProps {
+  cartCount: number;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ cartCount }) => {
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>
-        <span className={styles.logoText}>StarSoft</span>
-      </div>
-      <div className={styles.cart}>
-        <ShoppingBag size={24} color="#FF9F47" className={styles.cartIcon}/>
-        <span className={styles.cartCount}>0</span>
-      </div>
+      <Link href="/" className={styles.logo}>
+        StarSoft
+      </Link>
+      <Link href="/cart" className={styles.cartIcon}>
+        <ShoppingBag size={24} />
+        {cartCount > 0 && <span className={styles.cartCount}>{cartCount}</span>}
+      </Link>
     </nav>
   );
 };

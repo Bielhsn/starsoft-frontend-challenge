@@ -1,0 +1,119 @@
+.cartPage {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background-color: #232323;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .backButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #373737;
+    border-radius: 50%;
+    color: #ff8310;
+    text-decoration: none;
+  }
+  
+  .cartContainer {
+    background: #393939;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #393939;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .itemImage {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+  }
+  
+  .itemInfo {
+    flex-grow: 1;
+    padding: 0 15px;
+  }
+  
+  .itemPrice {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .ethIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .quantityControls {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .quantityControls button {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .quantityControls span {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .removeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff8310;
+  }
+  
+  .cartTotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .checkoutButton {
+    width: 100%;
+    background: #ff8310;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
