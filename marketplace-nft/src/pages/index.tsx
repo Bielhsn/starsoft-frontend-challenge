@@ -5,6 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Navbar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { addToCart } from "@/redux/cartSlice";
 
 interface NFT {
   id: string;
@@ -15,11 +19,15 @@ interface NFT {
 }
 
 const Home = () => {
+  const dispatch = useDispatch();
   const [nfts, setNfts] = useState<NFT[]>([]);
   const [visibleCount, setVisibleCount] = useState(8); // Começa com 8 NFTs visíveis
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState<NFT[]>([]);
-  const [cartCount, setCartCount] = useState(0); // Novo estado para o contador da sacola
+  const [addedToCart, setAddedToCart] = useState<{ [key: string]: boolean }>({});
+
+  const cartCount = useSelector((state: RootState) =>
+    state.cart.items.reduce((total, item) => total + item.quantity, 0)
+  );
 
   useEffect(() => {
     const fetchNFTs = async () => {
@@ -37,23 +45,22 @@ const Home = () => {
     fetchNFTs();
   }, []);
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
-    setCart(storedCart);
-    setCartCount(storedCart.length);
-  }, []);
-
   const loadMoreNFTs = () => {
     if (visibleCount < nfts.length) {
       setVisibleCount((prevCount) => prevCount + 4);
     }
   };
 
-  const addToCart = (nft: NFT) => {
-    const updatedCart = [...cart, nft];
-    setCart(updatedCart);
-    setCartCount(updatedCart.length);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  const addItemToCart = (nft: NFT) => {
+    dispatch(addToCart({ ...nft, quantity: 1 }));
+
+    // Define o estado do botão como "Adicionado ao Carrinho"
+    setAddedToCart((prev) => ({ ...prev, [nft.id]: true }));
+
+    // Reverte para "COMPRAR" após 5 segundos
+    setTimeout(() => {
+      setAddedToCart((prev) => ({ ...prev, [nft.id]: false }));
+    }, 2000);
   };
 
   const progress = (visibleCount / nfts.length) * 100;
@@ -62,7 +69,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar cartCount={cart.length} />
+      <Navbar />
 
       <div className={styles.container}>
         <div className={styles.grid}>
@@ -87,8 +94,8 @@ const Home = () => {
                   />
                   <strong className={styles.price}>{nft.price} ETH</strong>
                 </div>
-                <button className={styles.buyButton} onClick={() => addToCart(nft)}>
-                  COMPRAR
+                <button className={styles.buyButton} onClick={() => addItemToCart(nft)}>
+                  {addedToCart[nft.id] ? "ADICIONADO AO CARRINHO" : "COMPRAR"}
                 </button>
               </div>
             </div>
@@ -109,6 +116,7 @@ const Home = () => {
           </button>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

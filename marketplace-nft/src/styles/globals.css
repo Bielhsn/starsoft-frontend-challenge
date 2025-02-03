@@ -39,3 +39,12 @@ body {
 .button.added {
   background: #393939;
 }
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #CCCCCC;
+  background-color: #232323;
+  margin-top: 20px;
+}

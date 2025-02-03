@@ -1,119 +1,267 @@
-.cartPage {
-    font-family: "Poppins", sans-serif;
-    color: white;
-    background-color: #232323;
-    min-height: 100vh;
-    padding: 20px;
-  }
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+  margin-bottom: 200px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #373737;
+  border-radius: 50%;
+  color: #FF8310;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-left: -120px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  margin-left: 170px;
+}
+
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  background: #252525;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 20px;
+  width: 600px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.itemTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.itemDescription {
+  font-size: 14px;
+  color: #bbbbbb;
+  margin-bottom: 10px;
+}
+
+.itemImage {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.itemIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.itemPrice {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.quantityControl button {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.removeButton {
+  background: none;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  margin-left: 10px;
+  background-color: #FF8310;
   
-  .header {
-    display: flex;
+}
+
+.totalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 600px;
+  padding: 15px 0;
+  border-top: 1px solid #2c2c2c;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iconContainer {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.quantityControlContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.checkoutButton {
+  width: 90%;
+  max-width: 600px;
+  background: #FF8310;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 75px;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.checkoutButton:hover {
+  background: #e6740b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .headerContainer {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 100px;
   }
-  
+
   .backButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 40px;
     height: 40px;
-    background: #373737;
-    border-radius: 50%;
-    color: #ff8310;
-    text-decoration: none;
+    margin-left: 0;
   }
-  
-  .cartContainer {
-    background: #393939;
-    border-radius: 10px;
+
+  .title {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90%;
     padding: 20px;
   }
-  
-  .cartItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #393939;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-  
+
   .itemImage {
     width: 70px;
     height: 70px;
-    border-radius: 10px;
+    margin-bottom: 10px;
   }
-  
+
+  .itemTitle {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .itemDescription {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
   .itemInfo {
-    flex-grow: 1;
-    padding: 0 15px;
+    align-items: center;
   }
-  
+
+  .priceContainer {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .itemIcon {
+    width: 18px;
+    height: 18px;
+  }
+
   .itemPrice {
-    display: flex;
+    font-size: 14px;
+  }
+
+  .quantityControlContainer {
+    flex-direction: column;
     align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .ethIcon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-  }
-  
-  .quantityControls {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-  }
-  
-  .quantityControls button {
-    background: #1a1a1a;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .quantityControls span {
-    margin: 0 10px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .removeButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #ff8310;
-  }
-  
-  .cartTotal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  .checkoutButton {
     width: 100%;
-    background: #ff8310;
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 20px;
   }
-  
+
+  .quantityControl {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .quantityControl button {
+    font-size: 16px;
+  }
+
+  .removeButton {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .totalContainer,
+  .checkoutButton {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .checkoutButton {
+    height: 60px;
+  }
+}
