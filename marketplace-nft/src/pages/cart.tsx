@@ -20,8 +20,10 @@ const Cart = () => {
     setIsCheckout(true);
     setTimeout(() => {
       dispatch(clearCart()); // Limpa o carrinho
+      router.push("/"); // Redireciona para a Home
     }, 2000);
   };
+  
 
   return (
     <div className={styles.container}>
