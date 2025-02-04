@@ -12,11 +12,11 @@
     font-family: var(--font-family);
   }
   
-  .nftCard:hover {
+.nftCard:hover {
     transform: scale(1.05);
   }
   
-  .nftImage {
+.nftImage {
     width: 100%;
     max-width: 200px;
     height: auto;
@@ -24,7 +24,7 @@
     object-fit: cover;
   }
   
-  .title {
+.title {
     font-size: 18px;
     margin: 10px 0;
 }
@@ -34,7 +34,6 @@
   color: var(--text-secondary-color);
 }
 
-  
 .button {
   background: var(--primary-color);
   color: white;
@@ -48,4 +47,3 @@
 .added {
     background: #393939;
 }
-  

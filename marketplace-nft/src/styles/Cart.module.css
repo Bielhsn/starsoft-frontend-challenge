@@ -27,7 +27,7 @@
   font-weight: bold;
   text-align: center;
   margin: 0;
-  margin-left: 170px;
+  margin-left: 100px;
 }
 
 
@@ -138,6 +138,12 @@
   height: 30px;
 }
 
+.emptyCart {
+  font-size: 24px;
+  margin-left: 800px;
+}
+
+
 .quantityControlContainer {
   display: flex;
   align-items: center;
@@ -232,6 +238,13 @@
 
   .itemPrice {
     font-size: 14px;
+  }
+
+  .emptyCart {
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    margin-left: 230px;
   }
 
   .quantityControlContainer {
