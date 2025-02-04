@@ -12,7 +12,22 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <Link href="/" className={styles.logo}>
-        StarSoft
+      <span>s</span>
+      <span>s</span>
+      <span>t</span>
+      <span className={styles.backLogoT}>t</span>
+      <span>a</span>
+      <span className={styles.backLogoA}>a</span>
+      <span>r</span>
+      <span className={styles.backLogoR}>r</span>
+      <span>s</span>
+      <span className={styles.backLogoS2}>s</span>
+      <span>o</span>
+      <span className={styles.backLogoO}>o</span>
+      <span>f</span>
+      <span className={styles.backLogoF}>f</span>
+      <span>t</span>
+      <span className={styles.backLogoT2}>t</span>
       </Link>
       <Link href="/cart" className={styles.cartIcon}>
         <ShoppingBag size={24} />
