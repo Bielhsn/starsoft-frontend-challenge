@@ -49,7 +49,7 @@ const Home = () => {
   const addItemToCart = (nft: NFT) => {
     dispatch(addToCart({ ...nft, quantity: 1 }));
 
-    // Define o estado do botão como "Adicionado ao Carrinho"
+    // Define o estado do botão para "Adicionado ao Carrinho"
     setAddedToCart((prev) => ({ ...prev, [nft.id]: true }));
 
     // Reverte para "COMPRAR" após 5 segundos
