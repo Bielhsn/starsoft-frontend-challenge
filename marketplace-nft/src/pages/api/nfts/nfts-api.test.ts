@@ -1,4 +1,7 @@
-const { createMocks } = require("node-mocks-http");
+import fetch from 'node-fetch';
+(global as any).fetch = fetch;
+
+import { createMocks } from "node-mocks-http";
 const handler = require("../nfts/[id]").default;
 
 describe("API /api/nfts/[id]", () => {
@@ -8,7 +11,7 @@ describe("API /api/nfts/[id]", () => {
     await handler(req, res);
 
     expect(res._getStatusCode()).toBe(200);
-    expect(res._getJSONData()).toHaveProperty("id", "1");
+    expect(res._getJSONData()).toHaveProperty("id", 1);
   });
 
   it("deve retornar erro se o NFT não for encontrado", async () => {

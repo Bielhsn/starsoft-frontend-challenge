@@ -13,7 +13,9 @@ const customJestConfig = {
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
-  transformIgnorePatterns: [],
+  transformIgnorePatterns: [
+    "node_modules/(?!(lucide-react | some-other-module)/)", 
+  ],
 };
 
 module.exports = createJestConfig(customJestConfig);
