@@ -1,5 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+interface NFT {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    image: string;
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const { id } = req.query;
 
@@ -11,10 +19,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             throw new Error(`Erro na API externa: ${response.status} ${response.statusText}`);
         }
 
-        const result = await response.json();
+        const result: { data: NFT[] } = await response.json();
         
         // Filtrar o NFT específico pelo ID
-        const nft = result.data.find((n: any) => n.id == id);
+        const nft = result.data.find((n: NFT) => n.id == id);
 
         if (!nft) {
             return res.status(404).json({ error: `NFT com ID ${id} não encontrado` });
@@ -23,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // Retornar os detalhes do NFT
         return res.status(200).json(nft);
 
-    } catch (error: any) {
+    } catch (error) {
         console.error("Erro ao buscar NFT:", error);
         return res.status(500).json({ error: "Erro interno no servidor" });
     }

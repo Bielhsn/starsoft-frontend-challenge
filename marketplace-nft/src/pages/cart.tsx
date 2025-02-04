@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "../styles/Cart.module.css";
 import Image from "next/image";
 import { Trash, Minus, Plus, ArrowLeft } from "lucide-react";

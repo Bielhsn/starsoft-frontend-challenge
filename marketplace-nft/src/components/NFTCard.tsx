@@ -14,6 +14,7 @@ interface NFTCardProps {
     description: string;
     price: number;
     image: string;
+    quantity: number;
   };
 }
 

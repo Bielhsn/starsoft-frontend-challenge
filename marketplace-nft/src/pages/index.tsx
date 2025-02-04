@@ -6,8 +6,7 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
+import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/cartSlice";
 
 interface NFT {
@@ -24,10 +23,6 @@ const Home = () => {
   const [visibleCount, setVisibleCount] = useState(8); // Começa com 8 NFTs visíveis
   const [loading, setLoading] = useState(true);
   const [addedToCart, setAddedToCart] = useState<{ [key: string]: boolean }>({});
-
-  const cartCount = useSelector((state: RootState) =>
-    state.cart.items.reduce((total, item) => total + item.quantity, 0)
-  );
 
   useEffect(() => {
     const fetchNFTs = async () => {
